@@ -5,3 +5,11 @@
 .service-cta h3{color:#12302d;margin-bottom:5px}
 .service-cta p{margin:0}
 @media(max-width:750px){.service-cta{flex-direction:column;align-items:flex-start}.service-cta .btn{width:100%;text-align:center}}
+
+.nav-links{display:flex;align-items:center;gap:18px}
+.nav-links>a:first-child{color:#12302d;font-weight:700}
+.mission-vision{display:grid;gap:18px}
+.mv-card{background:white;border:1px solid #dcece8;border-radius:20px;padding:25px}
+.mv-card h3{color:#12302d;margin-bottom:8px}
+.mv-card p{margin:0}
+@media(max-width:750px){.nav-links>a:first-child{display:none}}
