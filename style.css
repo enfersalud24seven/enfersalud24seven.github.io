@@ -13,3 +13,12 @@
 .mv-card h3{color:#12302d;margin-bottom:8px}
 .mv-card p{margin:0}
 @media(max-width:750px){.nav-links>a:first-child{display:none}}
+
+.request-section{padding:80px 24px;max-width:900px;margin:0 auto}
+.service-form{display:grid;gap:18px;background:white;border:1px solid #dcece8;border-radius:24px;padding:28px;margin-top:28px}
+.service-form label{display:grid;gap:8px;font-weight:700;color:#12302d}
+.service-form input,.service-form select,.service-form textarea{width:100%;box-sizing:border-box;border:1px solid #cfe2de;border-radius:12px;padding:14px;font:inherit;color:#12302d;background:#fff}
+.service-form textarea{resize:vertical}
+.whatsapp-submit{border:0;border-radius:14px;padding:16px 20px;background:#0b8f7f;color:white;font-size:16px;font-weight:800;cursor:pointer}
+.whatsapp-submit:hover{opacity:.92}
+@media(max-width:750px){.request-section{padding:60px 24px}}

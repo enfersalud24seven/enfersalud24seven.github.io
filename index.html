@@ -49,6 +49,70 @@
 </div>
 </div>
 </section>
+
+<section class="request-section" id="solicitar">
+  <p class="eyebrow">Solicita tu servicio</p>
+  <h2>Cuéntanos qué necesitas</h2>
+  <p>Completa los datos y te ayudaremos a coordinar la atención en Bogotá.</p>
+
+  <form id="serviceForm" class="service-form">
+    <label>Nombre del paciente o familiar
+      <input type="text" id="nombre" required placeholder="Escribe tu nombre">
+    </label>
+
+    <label>Edad del paciente
+      <input type="number" id="edad" min="0" max="120" required placeholder="Edad">
+    </label>
+
+    <label>Localidad de Bogotá
+      <input type="text" id="localidad" required placeholder="Ej. Suba, Kennedy, Engativá">
+    </label>
+
+    <label>Servicio que necesita
+      <select id="servicio" required>
+        <option value="">Selecciona una opción</option>
+        <option>Cuidado del adulto mayor</option>
+        <option>Acompañamiento en casa</option>
+        <option>Cuidado domiciliario</option>
+        <option>Turno de cuidado</option>
+        <option>Otro servicio</option>
+      </select>
+    </label>
+
+    <label>Horario requerido
+      <input type="text" id="horario" required placeholder="Ej. Día, noche o 24 horas">
+    </label>
+
+    <label>Teléfono de contacto
+      <input type="tel" id="telefono" required placeholder="Tu número">
+    </label>
+
+    <label>Mensaje adicional
+      <textarea id="mensaje" rows="4" placeholder="Cuéntanos brevemente qué apoyo necesitan"></textarea>
+    </label>
+
+    <button type="submit" class="whatsapp-submit">📲 Solicitar información por WhatsApp</button>
+  </form>
+</section>
+
+<script>
+document.getElementById('serviceForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const get = id => document.getElementById(id).value.trim();
+  const texto =
+`Hola, Enfersalud24seven. Quiero solicitar información sobre un servicio de cuidado.
+
+Nombre: ${get('nombre')}
+Edad del paciente: ${get('edad')}
+Localidad: ${get('localidad')}
+Servicio: ${get('servicio')}
+Horario requerido: ${get('horario')}
+Teléfono: ${get('telefono')}
+Mensaje: ${get('mensaje') || 'No especificado'}`;
+
+  window.open('https://wa.me/573137271380?text=' + encodeURIComponent(texto), '_blank');
+});
+</script>
 <section class="cta"><p class="eyebrow">¿Necesitas información?</p><h2>Hablemos sobre tu necesidad de cuidado</h2><p>Escríbenos para conocer disponibilidad, servicios y condiciones de atención.</p><a class="btn primary" href="https://wa.me/573137271380?text=Hola%20Enfersalud24seven%2C%20quiero%20solicitar%20un%20servicio.">Solicitar servicio</a></section>
 <section class="section contact"><p class="eyebrow">Contacto</p><h2>Estamos en Bogotá</h2><div class="contact-box"><div><strong>WhatsApp</strong><p><a href="https://wa.me/573137271380">313 727 1380</a></p></div><div><strong>Correo</strong><p><a href="mailto:enfersalud24seven@yahoo.com">enfersalud24seven@yahoo.com</a></p></div><div><strong>Horario</strong><p>24/7 — sujeto a disponibilidad.</p></div></div></section>
 </main>
