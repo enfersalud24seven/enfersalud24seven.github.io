@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enfersalud24seven | Bogotá</title>
+  <meta name="description" content="Servicios de cuidado y acompañamiento de enfermería a domicilio en Bogotá.">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f7f9fb;color:#17324d;line-height:1.5}
+    header{background:linear-gradient(135deg,#0b7285,#159a9c);color:white;padding:28px 18px;text-align:center}
+    header img{width:85px;height:85px;object-fit:contain;background:white;border-radius:50%;padding:6px}
+    h1{margin:12px 0 5px;font-size:30px}
+    header p{margin:0;font-size:17px}
+    main{max-width:850px;margin:auto;padding:18px}
+    .card{background:white;border-radius:18px;padding:22px;margin:0 0 20px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+    .request{border:3px solid #159a9c}
+    h2{margin-top:0;color:#0b7285}
+    label{display:block;font-weight:bold;margin:13px 0 6px}
+    input,select,textarea{width:100%;padding:13px;border:1px solid #cbd5df;border-radius:10px;font-size:16px}
+    textarea{min-height:95px;resize:vertical}
+    button{width:100%;border:0;border-radius:12px;padding:15px;margin-top:18px;background:#25d366;color:white;font-size:18px;font-weight:bold;cursor:pointer}
+    .note{font-size:13px;color:#667085;margin-top:10px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .service{padding:16px;background:#eef8f8;border-radius:14px}
+    footer{text-align:center;padding:25px;color:#667085;font-size:14px}
+  </style>
+</head>
+<body>
+<header>
+  <img src="logo.jpg" alt="Logo Enfersalud24seven">
+  <h1>Enfersalud24seven</h1>
+  <p>Cuidado y acompañamiento de enfermería a domicilio en Bogotá</p>
+</header>
+
+<main>
+  <section class="card request">
+    <h2>Solicita tu servicio de enfermería</h2>
+    <p>Completa los datos y te contactaremos por WhatsApp para coordinar el servicio.</p>
+
+    <form id="serviceForm">
+      <label for="nombre">Nombre del paciente</label>
+      <input id="nombre" required>
+
+      <label for="edad">Edad</label>
+      <input id="edad" type="number" min="0">
+
+      <label for="diagnostico">Diagnóstico del paciente</label>
+      <input id="diagnostico" placeholder="Indique el diagnóstico">
+
+      <label for="peso">Peso (kg)</label>
+      <input id="peso" type="number" min="0" step="0.1">
+
+      <label for="localidad">Localidad</label>
+      <input id="localidad" placeholder="Ej. Suba, Kennedy, Engativá">
+
+      <label for="direccion">Dirección de domicilio</label>
+      <input id="direccion" required placeholder="Dirección donde se prestará el servicio">
+
+      <label for="servicio">Servicio que necesita</label>
+      <select id="servicio" required>
+        <option value="">Seleccione un servicio</option>
+        <option>Cuidado de adulto mayor</option>
+        <option>Acompañamiento de enfermería</option>
+        <option>Auxiliar de enfermería a domicilio</option>
+        <option>Cuidados postoperatorios</option>
+        <option>Administración de medicamentos</option>
+        <option>Otro servicio</option>
+      </select>
+
+      <label for="horario">Horario o fecha que necesita</label>
+      <input id="horario" placeholder="Ej. Hoy 8:00 p. m.">
+
+      <label for="telefono">Teléfono de contacto</label>
+      <input id="telefono" type="tel" required>
+
+      <label for="mensaje">Información adicional</label>
+      <textarea id="mensaje" placeholder="Cuéntenos cualquier información importante"></textarea>
+
+      <button type="submit">📲 Solicitar servicio por WhatsApp</button>
+      <div class="note">Al enviar, se abrirá WhatsApp con los datos de la solicitud.</div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Nuestros servicios</h2>
+    <div class="cards">
+      <div class="service"><strong>🏠 Atención domiciliaria</strong><br>Acompañamiento y cuidado en el hogar.</div>
+      <div class="service"><strong>👩‍⚕️ Auxiliares de enfermería</strong><br>Personal para apoyar las necesidades del paciente.</div>
+      <div class="service"><strong>❤️ Cuidado del adulto mayor</strong><br>Apoyo y acompañamiento personalizado.</div>
+      <div class="service"><strong>🤝 Acompañamiento</strong><br>Apoyo a pacientes y familias según sus necesidades.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Misión</h2>
+    <p>Brindar servicios de cuidado y acompañamiento de enfermería con calidad, respeto, responsabilidad y calidez humana, contribuyendo al bienestar de nuestros pacientes y sus familias.</p>
+    <h2>Visión</h2>
+    <p>Ser una agencia de referencia en servicios de enfermería y cuidado a domicilio en Bogotá, reconocida por la confianza, el compromiso y la atención humana.</p>
+  </section>
+</main>
+
+<footer>
+  Enfersalud24seven · Bogotá, Colombia<br>
+  Atención y coordinación de servicios por WhatsApp
+</footer>
+
+<script>
+document.getElementById("serviceForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const datos = [
+    "SOLICITUD DE SERVICIO - ENFERSALUD24SEVEN",
+    "",
+    "Nombre del paciente: " + document.getElementById("nombre").value,
+    "Edad: " + document.getElementById("edad").value,
+    "Diagnóstico: " + document.getElementById("diagnostico").value,
+    "Peso: " + document.getElementById("peso").value + " kg",
+    "Localidad: " + document.getElementById("localidad").value,
+    "Dirección: " + document.getElementById("direccion").value,
+    "Servicio: " + document.getElementById("servicio").value,
+    "Horario/fecha: " + document.getElementById("horario").value,
+    "Teléfono: " + document.getElementById("telefono").value,
+    "Información adicional: " + document.getElementById("mensaje").value
+  ].join("\n");
+
+  const whatsapp = "573137271380";
+  window.open("https://wa.me/" + whatsapp + "?text=" + encodeURIComponent(datos), "_blank");
+});
+</script>
+</body>
+</html>
