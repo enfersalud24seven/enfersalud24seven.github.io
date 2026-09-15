@@ -3,111 +3,449 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Enfersalud24seven - Servicios de cuidado y acompañamiento de enfermería a domicilio en Bogotá. Atención responsable, humana y profesional.">
-  <title>Enfersalud24seven | Cuidado y enfermería a domicilio</title>
+  <meta name="description" content="Enfersalud24seven - Servicios de enfermería y atención domiciliaria en Bogotá.">
+  <title>Enfersalud24seven | Atención de enfermería en Bogotá</title>
+
   <style>
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f8fa;color:#17324d;line-height:1.6}
-    a{text-decoration:none}.hero{background:linear-gradient(135deg,#087b8a,#159fa0);color:#fff;padding:18px 18px 42px}
-    nav{max-width:1050px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:18px}.brand img{width:52px;height:52px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
-    .nav-links{display:flex;align-items:center;gap:10px}.nav-links a{color:#fff;font-weight:bold}.nav-btn{background:#25d366;padding:10px 15px;border-radius:999px}
-    .hero-content{max-width:1050px;margin:35px auto 0;display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:center}
-    .eyebrow{text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:bold;margin:0 0 8px;opacity:.9}
-    h1{font-size:clamp(36px,7vw,62px);line-height:1.05;margin:8px 0 15px}.lead{font-size:20px;max-width:700px;margin:0 0 24px}
-    .hero-card{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:22px;padding:28px;text-align:center}.heart{font-size:54px}.hero-card h3{margin:8px 0;font-size:24px}.hero-card p{margin:0}
-    .btn{display:inline-block;padding:14px 21px;border-radius:12px;font-weight:bold;transition:.2s}.btn:hover{transform:translateY(-1px)}.primary{background:#25d366;color:#fff}
-    main{max-width:1050px;margin:auto}.section,.request-section,.about,.founder,.cta{margin:22px 18px;background:#fff;border-radius:22px;padding:30px;box-shadow:0 5px 22px rgba(0,0,0,.07)}
-    h2{color:#087b8a;font-size:clamp(27px,5vw,38px);line-height:1.2;margin:5px 0 12px} h3{margin-bottom:7px}.section-intro{max-width:800px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.service{background:#eef8f8;border-radius:16px;padding:20px}.service-icon{font-size:34px}
-    .service-cta{margin-top:20px;padding:20px;border-radius:16px;background:#eaf7f7;display:flex;justify-content:space-between;align-items:center;gap:15px}
-    .about,.founder{display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:start}.checklist p{margin:8px 0}
-    .founder{border:3px solid #159a9c}.founder-quote{background:#eef8f8;border-left:5px solid #159a9c;padding:20px;border-radius:0 15px 15px 0;font-style:italic}
-    .mv{display:grid;grid-template-columns:1fr 1fr;gap:15px}.mv-card{background:#f2f7fa;border-radius:16px;padding:20px}
-    .request-section{border:3px solid #159a9c}.service-form label{display:block;font-weight:bold;margin:14px 0 6px}
-    input,select,textarea{width:100%;padding:14px;border:1px solid #cbd5df;border-radius:11px;font-size:16px;font-family:inherit;background:#fff}textarea{min-height:110px;resize:vertical}
-    .whatsapp-submit{width:100%;border:0;border-radius:12px;padding:16px;margin-top:20px;background:#25d366;color:#fff;font-size:18px;font-weight:bold;cursor:pointer}.note{color:#667085;font-size:13px;margin-top:9px}
-    .cta{background:linear-gradient(135deg,#087b8a,#159fa0);color:#fff;text-align:center}.cta h2{color:#fff}.contact-box{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-    .contact-box>div{background:#f2f7fa;padding:18px;border-radius:14px}.contact-box a{color:#087b8a;font-weight:bold}.notice{margin-top:20px;padding:14px;background:#fff8e8;border-radius:12px;font-size:13px;color:#5c4b20}
-    footer{text-align:center;padding:28px 18px;color:#667085;font-size:14px}
-    @media(max-width:760px){nav{align-items:flex-start}.brand span{display:none}.nav-links a:first-child{display:none}.hero-content,.about,.founder{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.mv{grid-template-columns:1fr}.service-cta{flex-direction:column;align-items:flex-start}.contact-box{grid-template-columns:1fr}.section,.request-section,.about,.founder,.cta{padding:23px;margin-left:12px;margin-right:12px}}
+    :root{
+      --azul:#0b477d;
+      --azul-oscuro:#07365f;
+      --turquesa:#12a9a3;
+      --turquesa-oscuro:#078b88;
+      --blanco:#ffffff;
+      --fondo:#eef9fb;
+      --texto:#163d62;
+      --borde:#d7e3ea;
+      --sombra:0 18px 45px rgba(7,54,95,.16);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      background:var(--fondo);
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+
+    /* ENCABEZADO */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.97);
+      box-shadow:0 2px 15px rgba(0,0,0,.08);
+    }
+    .nav{
+      max-width:1180px;
+      margin:auto;
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand-icon{
+      width:54px;height:54px;border:4px solid var(--turquesa);
+      border-radius:50%;
+      display:grid;place-items:center;
+      color:var(--turquesa);
+      font-size:28px;
+      font-weight:800;
+    }
+    .brand-name{
+      font-size:28px;
+      font-weight:800;
+      color:var(--azul);
+      letter-spacing:-.5px;
+    }
+    .brand-name span{color:var(--turquesa)}
+    .tagline{font-size:15px;font-weight:600;margin-top:2px}
+    .menu{display:flex;gap:30px;align-items:center;font-weight:700}
+    .menu a{padding:9px 0;border-bottom:3px solid transparent}
+    .menu a:hover,.menu a.active{color:var(--turquesa);border-bottom-color:var(--turquesa)}
+    .menu-toggle{display:none;background:none;border:0;font-size:34px;color:var(--azul);cursor:pointer}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 86px);
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(238,249,251,.98) 0%,rgba(238,249,251,.92) 38%,rgba(238,249,251,.45) 68%,rgba(238,249,251,.18) 100%),
+        url("fondo-enfersalud.jpg") center/cover no-repeat;
+      padding:55px 20px 70px;
+    }
+    .hero-inner{
+      width:100%;
+      max-width:1180px;
+      margin:auto;
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:38px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:9px 17px;
+      border-radius:24px;
+      background:#d8f4f3;
+      color:#087d7a;
+      font-weight:800;
+      letter-spacing:1px;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(42px,5vw,68px);
+      line-height:1.02;
+      margin:0 0 18px;
+      color:var(--azul);
+      letter-spacing:-2px;
+    }
+    .hero-copy{
+      font-size:22px;
+      line-height:1.5;
+      margin:0 0 22px;
+      max-width:560px;
+    }
+    .trust{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin:18px 0 25px;
+    }
+    .trust span{
+      background:rgba(255,255,255,.9);
+      border:1px solid #d8e9ee;
+      border-radius:18px;
+      padding:9px 12px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    /* FORMULARIO */
+    .card{
+      background:rgba(255,255,255,.97);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--sombra);
+      border:1px solid rgba(255,255,255,.85);
+    }
+    .card h2{margin:0 0 6px;color:var(--azul);font-size:27px}
+    .card p{margin:0 0 20px;color:#5a7186}
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+    .field.full{grid-column:1/-1}
+    label{
+      display:block;
+      font-weight:800;
+      margin:0 0 7px;
+      color:var(--azul);
+    }
+    input,select,textarea{
+      width:100%;
+      border:1.5px solid var(--borde);
+      border-radius:12px;
+      padding:14px 15px;
+      outline:none;
+      color:var(--texto);
+      background:#fff;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--turquesa);
+      box-shadow:0 0 0 3px rgba(18,169,163,.12);
+    }
+    textarea{min-height:95px;resize:vertical}
+    .submit{
+      width:100%;
+      border:0;
+      border-radius:13px;
+      padding:16px;
+      margin-top:17px;
+      background:var(--turquesa);
+      color:white;
+      font-weight:800;
+      font-size:17px;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .submit:hover{background:var(--turquesa-oscuro);transform:translateY(-1px)}
+    .secure{text-align:center;margin:12px 0 0;font-size:13px;color:#557088}
+
+    /* BENEFICIOS */
+    .benefits{
+      background:#fff;
+      padding:35px 20px;
+    }
+    .benefit-grid{
+      max-width:1180px;margin:auto;
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+    .benefit{text-align:center;padding:10px 15px;border-right:1px solid #dbe6ec}
+    .benefit:last-child{border-right:0}
+    .icon{font-size:30px;margin-bottom:8px}
+    .benefit strong{display:block;color:var(--azul);margin-bottom:4px}
+
+    /* SECCIONES */
+    section.content{padding:75px 20px}
+    .container{max-width:1100px;margin:auto}
+    .section-title{text-align:center;color:var(--azul);font-size:38px;margin:0 0 12px}
+    .section-subtitle{text-align:center;max-width:760px;margin:0 auto 38px;color:#5d7488;font-size:18px;line-height:1.55}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{
+      background:#fff;border-radius:18px;padding:24px;
+      box-shadow:0 8px 25px rgba(7,54,95,.08);
+      border:1px solid #e3edf2;
+    }
+    .service h3{color:var(--azul);margin:0 0 9px}
+    .service p{line-height:1.55;color:#607689;margin:0}
+
+    .about{
+      background:linear-gradient(135deg,#e9f9f8,#fff);
+    }
+    .about-box{
+      max-width:900px;margin:auto;text-align:center;
+      background:#fff;padding:35px;border-radius:22px;
+      box-shadow:0 10px 30px rgba(7,54,95,.07);
+    }
+    .about-box p{font-size:18px;line-height:1.7;color:#536d82}
+
+    /* FOOTER */
+    footer{
+      background:var(--azul-oscuro);
+      color:white;text-align:center;padding:26px 20px;
+    }
+    footer p{margin:5px 0}
+
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero{background:
+        linear-gradient(rgba(238,249,251,.93),rgba(238,249,251,.96)),
+        url("fondo-enfersalud.jpg") center/cover no-repeat;}
+      .hero-copy{font-size:19px}
+      .benefit-grid{grid-template-columns:repeat(2,1fr)}
+      .benefit:nth-child(2){border-right:0}
+      .service-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:700px){
+      .nav{min-height:72px;padding:9px 15px}
+      .brand-icon{width:44px;height:44px;font-size:22px}
+      .brand-name{font-size:20px}
+      .tagline{font-size:12px}
+      .menu-toggle{display:block}
+      .menu{
+        display:none;position:absolute;left:0;right:0;top:72px;
+        background:#fff;flex-direction:column;gap:0;padding:10px 20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1)
+      }
+      .menu.open{display:flex}
+      .menu a{width:100%;padding:13px 0}
+      .hero{padding:35px 14px 45px;min-height:auto}
+      h1{font-size:42px}
+      .card{padding:20px;border-radius:20px}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .benefit-grid{grid-template-columns:1fr 1fr;gap:5px}
+      .benefit{border-right:0!important}
+      section.content{padding:55px 15px}
+      .service-grid{grid-template-columns:1fr}
+      .section-title{font-size:31px}
+    }
   </style>
 </head>
+
 <body>
-<header class="hero">
-  <nav>
-    <div class="brand"><img src="logo.jpg" alt="Logo Enfersalud24seven"><span>Enfersalud24seven</span></div>
-    <div class="nav-links"><a href="#nosotros">Quiénes somos</a><a class="nav-btn" href="https://wa.me/573137271380" target="_blank" rel="noopener">WhatsApp</a></div>
+<header>
+  <nav class="nav">
+    <a class="brand" href="#inicio" aria-label="Enfersalud24seven">
+      <div class="brand-icon">✚</div>
+      <div>
+        <div class="brand-name">Enfersalud<span>24seven</span></div>
+        <div class="tagline">Tu bienestar, nuestra prioridad</div>
+      </div>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+
+    <div class="menu">
+      <a class="active" href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </div>
   </nav>
-  <div class="hero-content">
-    <div>
-      <p class="eyebrow">Cuidado humano • Atención domiciliaria</p>
-      <h1>Cuidamos de ti y de los tuyos.</h1>
-      <p class="lead">Servicios de cuidado y acompañamiento en salud a domicilio en Bogotá, con responsabilidad, humanidad y profesionalismo.</p>
-      <a class="btn primary" href="#solicitar">Solicitar servicio</a>
-    </div>
-    <div class="hero-card"><div class="heart">❤️</div><h3>Atención con calidad humana</h3><p>Nuestro propósito es acompañar a cada paciente y a su familia con respeto, confianza y cercanía.</p></div>
-  </div>
 </header>
+
 <main>
-  <section class="section">
-    <p class="eyebrow">Nuestra razón de ser</p><h2>Salud y cuidado con un trato más humano</h2>
-    <p>En <strong>Enfersalud24seven</strong> queremos ofrecer servicios de salud y cuidado de la más alta calidad a las familias, brindando una atención basada en la <strong>responsabilidad, la humanidad, el respeto y el profesionalismo</strong>.</p>
-    <p>Nuestro propósito es acompañar a cada paciente y a su familia con un servicio cercano, confiable y oportuno, entendiendo que detrás de cada atención hay una persona que necesita sentirse segura, escuchada y bien cuidada.</p>
-    <p>Trabajamos para brindar una atención humana y personalizada, adaptada a las necesidades de cada paciente, promoviendo su bienestar, tranquilidad y calidad de vida.</p>
-    <p><strong>Enfersalud24seven nace para servir, cuidar y acompañar con humanidad.</strong></p>
-  </section>
-  <section class="section" id="servicios">
-    <p class="eyebrow">Nuestros servicios</p><h2>Soluciones de cuidado para tu familia</h2>
-    <p class="section-intro">Coordinamos servicios de cuidado y acompañamiento en el hogar de acuerdo con las necesidades de cada persona y la disponibilidad del personal.</p>
-    <div class="cards">
-      <article class="service"><div class="service-icon">👵</div><h3>Cuidado del adulto mayor</h3><p>Acompañamiento y apoyo durante la jornada, según las necesidades del usuario.</p></article>
-      <article class="service"><div class="service-icon">🤝</div><h3>Acompañamiento en casa</h3><p>Compañía y apoyo responsable para personas que requieren acompañamiento en su hogar.</p></article>
-      <article class="service"><div class="service-icon">🏠</div><h3>Cuidado domiciliario</h3><p>Coordinación de personal para servicios de cuidado en casa.</p></article>
-      <article class="service"><div class="service-icon">❤️</div><h3>Apoyo a la familia</h3><p>Comunicación y orientación inicial para coordinar el servicio adecuado.</p></article>
-      <article class="service"><div class="service-icon">🌙</div><h3>Turnos de cuidado</h3><p>Consulta disponibilidad para turnos diurnos, nocturnos y otras modalidades.</p></article>
-      <article class="service"><div class="service-icon">📞</div><h3>Atención y coordinación</h3><p>Información sobre disponibilidad, condiciones y proceso de solicitud.</p></article>
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">SOLICITA TU SERVICIO</div>
+        <h1>Cuéntanos qué necesitas</h1>
+        <p class="hero-copy">
+          Completa los datos y te ayudaremos a coordinar la atención de enfermería
+          y cuidado domiciliario en Bogotá.
+        </p>
+
+        <div class="trust">
+          <span>✓ Atención humana</span>
+          <span>✓ Personal capacitado</span>
+          <span>✓ Servicio domiciliario</span>
+        </div>
+      </div>
+
+      <div class="card" id="contacto">
+        <h2>Solicita atención</h2>
+        <p>Déjanos los datos básicos del paciente.</p>
+
+        <form id="serviceForm">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="nombre">Nombre del paciente o familiar</label>
+              <input id="nombre" name="nombre" required placeholder="Escribe tu nombre">
+            </div>
+
+            <div class="field">
+              <label for="edad">Edad del paciente</label>
+              <input id="edad" name="edad" type="number" min="0" placeholder="Edad (años)">
+            </div>
+
+            <div class="field">
+              <label for="peso">Peso del paciente</label>
+              <input id="peso" name="peso" placeholder="Ej. 60 kg">
+            </div>
+
+            <div class="field">
+              <label for="localidad">Localidad de Bogotá</label>
+              <select id="localidad" name="localidad">
+                <option value="">Selecciona una opción</option>
+                <option>Usaquén</option><option>Chapinero</option><option>Santa Fe</option>
+                <option>San Cristóbal</option><option>Usme</option><option>Tunjuelito</option>
+                <option>Bosa</option><option>Kennedy</option><option>Fontibón</option>
+                <option>Engativá</option><option>Suba</option><option>Barrios Unidos</option>
+                <option>Teusaquillo</option><option>Los Mártires</option><option>Antonio Nariño</option>
+                <option>Puente Aranda</option><option>La Candelaria</option><option>Rafael Uribe Uribe</option>
+                <option>Ciudad Bolívar</option><option>Sumapaz</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="direccion">Dirección de domicilio</label>
+              <input id="direccion" name="direccion" placeholder="Ej. Calle 123 # 45 - 67">
+            </div>
+
+            <div class="field full">
+              <label for="diagnostico">Diagnóstico del paciente</label>
+              <textarea id="diagnostico" name="diagnostico" placeholder="Ej. hipertensión, diabetes, postoperatorio, etc."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="servicio">Servicio que necesita</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option>Enfermería domiciliaria</option>
+                <option>Cuidado de adulto mayor</option>
+                <option>Acompañamiento de paciente</option>
+                <option>Cuidado postoperatorio</option>
+                <option>Administración de medicamentos</option>
+                <option>Otro servicio</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="horario">Horario requerido</label>
+              <input id="horario" name="horario" placeholder="Ej. Día, noche o 24 horas">
+            </div>
+          </div>
+
+          <button class="submit" type="submit">💬 Enviar solicitud por WhatsApp →</button>
+          <div class="secure">🔒 Tus datos se utilizan únicamente para coordinar tu solicitud.</div>
+        </form>
+      </div>
     </div>
-    <div class="service-cta"><div><h3>¿Necesitas atención para un familiar?</h3><p>Cuéntanos qué necesitas y te orientaremos sobre las opciones disponibles.</p></div><a class="btn primary" href="#solicitar">Solicitar servicio</a></div>
-    <p class="notice">Los procedimientos clínicos y servicios de salud sujetos a habilitación serán prestados únicamente por personal autorizado y conforme a la normativa colombiana aplicable. La disponibilidad y alcance de cada servicio se confirma antes de la contratación.</p>
   </section>
-  <section class="about" id="nosotros">
-    <div><p class="eyebrow">Quiénes somos</p><h2>Una atención más humana</h2><p>Enfersalud24seven es una iniciativa de cuidado y acompañamiento domiciliario en Bogotá, enfocada en brindar apoyo responsable, respetuoso y cercano a las personas y sus familias.</p><p>Buscamos facilitar el acceso a servicios de cuidado en casa, escuchando las necesidades de cada usuario y coordinando la atención de acuerdo con la disponibilidad del personal y la normativa aplicable.</p></div>
-    <div class="checklist"><p>✓ Trato humano y respetuoso</p><p>✓ Atención orientada a las necesidades del usuario</p><p>✓ Comunicación clara con la familia</p><p>✓ Coordinación de servicios a domicilio</p><p>✓ Compromiso y responsabilidad</p></div>
-  </section>
-  <section class="founder">
-    <div><p class="eyebrow">Nuestra historia</p><h2>Palabras del fundador</h2><h3>Maicol Guiza — Fundador de Enfersalud24seven</h3>
-      <div class="founder-quote">“Decidí fundar Enfersalud24seven porque creo que cuidar de una persona va mucho más allá de prestar un servicio. Significa brindar tranquilidad a una familia, acompañar al paciente en momentos importantes y ofrecerle un trato digno, humano y respetuoso.<br><br>Como profesional del área de enfermería, he comprendido que muchas familias necesitan un servicio de salud confiable, responsable y cercano. Por eso nació Enfersalud24seven: con el deseo de reunir un equipo comprometido y llevar atención de calidad hasta el hogar de quienes más lo necesitan.<br><br>Mi propósito es que cada familia que confíe en nosotros sienta que puso el cuidado de su ser querido en buenas manos.<br><br><strong>Enfersalud24seven nace para servir, cuidar y acompañar con humanidad.</strong>”</div>
+
+  <section class="benefits">
+    <div class="benefit-grid">
+      <div class="benefit"><div class="icon">🛡️</div><strong>Atención segura</strong><span>y confiable</span></div>
+      <div class="benefit"><div class="icon">🏠</div><strong>En tu hogar</strong><span>cuando lo necesites</span></div>
+      <div class="benefit"><div class="icon">🕐</div><strong>Disponibilidad</strong><span>24/7</span></div>
+      <div class="benefit"><div class="icon">♡</div><strong>Cuidado humano</strong><span>y profesional</span></div>
     </div>
-    <div><p class="eyebrow">Nuestro compromiso</p><h3>Construir confianza, familia por familia</h3><p>Queremos crecer de la mano de las familias, aprendiendo de cada experiencia y fortaleciendo un equipo comprometido con la calidad del cuidado.</p><p>Nuestro objetivo es que la confianza y el buen trato sean parte esencial de cada servicio.</p></div>
   </section>
-  <section class="section"><p class="eyebrow">Nuestro rumbo</p><h2>Misión y visión</h2><div class="mv"><div class="mv-card"><h3>🎯 Nuestra misión</h3><p>Brindar servicios de cuidado y acompañamiento domiciliario con calidad humana, responsabilidad y respeto, contribuyendo al bienestar de las personas y ofreciendo tranquilidad a sus familias.</p></div><div class="mv-card"><h3>🔭 Nuestra visión</h3><p>Ser una agencia de referencia en Bogotá en servicios de cuidado y acompañamiento domiciliario, reconocida por su trato humano, confiabilidad, organización y compromiso con las familias.</p></div></div></section>
-  <section class="request-section" id="solicitar"><p class="eyebrow">Solicita tu servicio</p><h2>Cuéntanos qué necesita el paciente</h2><p>Completa los datos y te contactaremos por WhatsApp para coordinar el servicio en Bogotá.</p>
-    <form id="serviceForm" class="service-form">
-      <label for="nombre">Nombre del paciente o familiar<input type="text" id="nombre" required placeholder="Escribe el nombre"></label>
-      <label for="edad">Edad del paciente<input type="number" id="edad" min="0" max="120" required placeholder="Edad"></label>
-      <label for="diagnostico">Diagnóstico del paciente<input type="text" id="diagnostico" required placeholder="Indica el diagnóstico"></label>
-      <label for="peso">Peso del paciente<input type="text" id="peso" required placeholder="Ej. 70 kg"></label>
-      <label for="localidad">Localidad de Bogotá<input type="text" id="localidad" required placeholder="Ej. Suba, Kennedy, Engativá"></label>
-      <label for="direccion">Dirección de domicilio<input type="text" id="direccion" required placeholder="Dirección donde se prestará el servicio"></label>
-      <label for="servicio">Servicio que necesita<select id="servicio" required><option value="">Selecciona una opción</option><option>Cuidado del adulto mayor</option><option>Acompañamiento en casa</option><option>Cuidado domiciliario</option><option>Turno de cuidado</option><option>Otro servicio</option></select></label>
-      <label for="horario">Horario requerido<input type="text" id="horario" required placeholder="Ej. Día, noche o 24 horas"></label>
-      <label for="telefono">Teléfono de contacto<input type="tel" id="telefono" required placeholder="Tu número"></label>
-      <label for="mensaje">Mensaje adicional<textarea id="mensaje" placeholder="Cuéntanos brevemente qué apoyo necesitan"></textarea></label>
-      <button type="submit" class="whatsapp-submit">📲 Solicitar información por WhatsApp</button>
-      <div class="note">Al enviar, se abrirá WhatsApp con los datos de la solicitud para coordinar la atención.</div>
-    </form>
+
+  <section class="content" id="servicios">
+    <div class="container">
+      <h2 class="section-title">Nuestros servicios</h2>
+      <p class="section-subtitle">Atención y acompañamiento pensado para las necesidades de cada paciente y su familia.</p>
+
+      <div class="service-grid">
+        <article class="service"><h3>Enfermería domiciliaria</h3><p>Apoyo de enfermería en el hogar de acuerdo con las necesidades del paciente.</p></article>
+        <article class="service"><h3>Cuidado del adulto mayor</h3><p>Acompañamiento humano y responsable para brindar tranquilidad a la familia.</p></article>
+        <article class="service"><h3>Cuidado postoperatorio</h3><p>Apoyo durante la recuperación y seguimiento de las indicaciones del equipo de salud.</p></article>
+        <article class="service"><h3>Acompañamiento</h3><p>Compañía y apoyo para pacientes que requieren asistencia durante el día o la noche.</p></article>
+        <article class="service"><h3>Administración de medicamentos</h3><p>Servicio sujeto a las indicaciones y condiciones clínicas correspondientes.</p></article>
+        <article class="service"><h3>Otros cuidados</h3><p>Cuéntanos qué necesita el paciente y coordinaremos la alternativa adecuada.</p></article>
+      </div>
+    </div>
   </section>
-  <section class="cta"><p class="eyebrow">¿Necesitas información?</p><h2>Hablemos sobre tu necesidad de cuidado</h2><p>Escríbenos para conocer disponibilidad, servicios y condiciones de atención.</p><a class="btn primary" href="https://wa.me/573137271380?text=Hola%20Enfersalud24seven%2C%20quiero%20solicitar%20un%20servicio." target="_blank" rel="noopener">Hablar por WhatsApp</a></section>
-  <section class="section"><p class="eyebrow">Contacto</p><h2>Estamos en Bogotá</h2><div class="contact-box"><div><strong>📱 WhatsApp</strong><p><a href="https://wa.me/573137271380" target="_blank" rel="noopener">313 727 1380</a></p></div><div><strong>✉️ Correo</strong><p><a href="mailto:enfersalud24seven@yahoo.com">enfersalud24seven@yahoo.com</a></p></div><div><strong>🕐 Atención</strong><p>24/7 — sujeto a disponibilidad.</p></div></div></section>
+
+  <section class="content about" id="nosotros">
+    <div class="container">
+      <h2 class="section-title">Nosotros</h2>
+      <p class="section-subtitle">Cuidado humano, responsabilidad y profesionalismo.</p>
+
+      <div class="about-box">
+        <p>
+          <strong>Enfersalud24seven</strong> quiere ofrecer los mejores servicios de salud
+          a las familias, con responsabilidad, humanidad y profesionalismo.
+          Nuestro objetivo es facilitar la coordinación de servicios de enfermería
+          y atención domiciliaria en Bogotá.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
-<footer><strong>Enfersalud24seven</strong><p>© 2026 · Bogotá, Colombia</p><p>Cuidar, acompañar y servir con humanidad.</p></footer>
+
+<footer>
+  <p><strong>Enfersalud24seven</strong> &nbsp;|&nbsp; Bogotá, Colombia</p>
+  <p>Tu bienestar, nuestra prioridad.</p>
+</footer>
+
 <script>
-  document.getElementById('serviceForm').addEventListener('submit', function(e) {
+  // Número de WhatsApp de Enfersalud24seven.
+  // Se mantiene en una sola variable para poder cambiarlo fácilmente.
+  const WHATSAPP = "573137271380";
+
+  document.getElementById("serviceForm").addEventListener("submit", function(e){
     e.preventDefault();
-    const get = id => document.getElementById(id).value.trim();
-    const texto = `Hola, Enfersalud24seven. Quiero solicitar información sobre un servicio de cuidado.\n\nNombre del paciente o familiar: ${get('nombre')}\nEdad del paciente: ${get('edad')}\nDiagnóstico del paciente: ${get('diagnostico')}\nPeso: ${get('peso')}\nLocalidad: ${get('localidad')}\nDirección de domicilio: ${get('direccion')}\nServicio: ${get('servicio')}\nHorario requerido: ${get('horario')}\nTeléfono de contacto: ${get('telefono')}\nMensaje adicional: ${get('mensaje') || 'No especificado'}`;
-    window.open('https://wa.me/573137271380?text=' + encodeURIComponent(texto), '_blank');
+
+    const data = new FormData(this);
+    const mensaje =
+`Hola, Enfersalud24seven. Quiero solicitar un servicio de atención domiciliaria.
+
+Nombre: ${data.get("nombre") || ""}
+Edad: ${data.get("edad") || ""}
+Peso: ${data.get("peso") || ""}
+Localidad: ${data.get("localidad") || ""}
+Dirección: ${data.get("direccion") || ""}
+Diagnóstico: ${data.get("diagnostico") || ""}
+Servicio requerido: ${data.get("servicio") || ""}
+Horario requerido: ${data.get("horario") || ""}`;
+
+    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensaje), "_blank");
   });
 </script>
 </body>
