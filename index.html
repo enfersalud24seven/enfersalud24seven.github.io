@@ -91,10 +91,15 @@ footer{background:#7f1720;color:#fff;padding:28px 18px}.footerInner{max-width:10
 <script>
 document.getElementById('requestForm').addEventListener('submit',function(e){
 e.preventDefault();const d=new FormData(this);
-const m=`Hola, Enfersalud24seven. Quiero solicitar un servicio.%0A
-Nombre: ${d.get('nombre')||''}%0AEdad: ${d.get('edad')||''}%0APeso: ${d.get('peso')||''}%0A
-Localidad: ${d.get('localidad')||''}%0ADirección: ${d.get('direccion')||''}%0ADiagnóstico: ${d.get('diagnostico')||''}%0A
-Servicio: ${d.get('servicio')||''}%0AHorario: ${d.get('horario')||''}`;
+const m=`Hola, Enfersalud24seven. Quiero solicitar un servicio.
+Nombre: ${d.get('nombre')||''}
+Edad: ${d.get('edad')||''}
+Peso: ${d.get('peso')||''}
+Localidad: ${d.get('localidad')||''}
+Dirección: ${d.get('direccion')||''}
+Diagnóstico: ${d.get('diagnostico')||''}
+Servicio: ${d.get('servicio')||''}
+Horario: ${d.get('horario')||''}`;
 window.open('https://wa.me/573137271380?text='+encodeURIComponent(m),'_blank');
 });
 </script>
